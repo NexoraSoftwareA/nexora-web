@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import { ArrowRight } from "lucide-react";
 
 type ButtonProps = {
   children: ReactNode;
@@ -13,19 +14,24 @@ export default function Button({
   variant = "primary",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-300";
+    "group inline-flex items-center justify-center gap-2 rounded-2xl px-7 py-3.5 text-sm font-semibold transition-all duration-300";
 
   const variants = {
     primary:
-      "bg-blue-600 text-white hover:bg-blue-500 hover:scale-105 shadow-lg shadow-blue-600/30",
+      "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:shadow-blue-500/50",
 
     secondary:
-      "border border-white/20 bg-white/5 text-white hover:border-blue-500 hover:bg-white/10",
+      "border border-white/10 bg-white/5 text-white backdrop-blur-xl hover:border-cyan-400 hover:bg-white/10 hover:-translate-y-1",
   };
 
   return (
     <Link href={href} className={`${base} ${variants[variant]}`}>
       {children}
+
+      <ArrowRight
+        size={18}
+        className="transition-transform duration-300 group-hover:translate-x-1"
+      />
     </Link>
   );
 }
