@@ -148,6 +148,7 @@ export default function Hero() {
               justify-center
               lg:justify-end
               lg:pl-4
+              lg:translate-y-12
             "
           >
             <div
