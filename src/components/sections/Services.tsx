@@ -1,72 +1,247 @@
-import { Code2, Bot, Briefcase } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 
+import {
+  BrainCircuit,
+  Code2,
+  Workflow,
+  ShieldCheck,
+  Database,
+  Cloud,
+} from "lucide-react";
+
+
 const services = [
+
   {
-    icon: <Code2 size={36} />,
-    title: "Desarrollo de Software",
+    icon: Code2,
+    title: "Software a medida",
     description:
-      "Creamos aplicaciones web, plataformas y sistemas personalizados adaptados a las necesidades de tu empresa.",
+      "Desarrollamos plataformas web y aplicaciones adaptadas a los procesos y objetivos de tu empresa.",
   },
+
   {
-    icon: <Bot size={36} />,
+    icon: BrainCircuit,
     title: "Inteligencia Artificial",
     description:
-      "Implementamos IA y automatización para optimizar procesos, reducir costos y aumentar la productividad.",
+      "Aplicamos IA para automatizar tareas, analizar información y mejorar la toma de decisiones.",
   },
+
   {
-    icon: <Briefcase size={36} />,
-    title: "Soluciones Empresariales",
+    icon: Workflow,
+    title: "Automatización empresarial",
     description:
-      "Diseñamos herramientas tecnológicas para impulsar el crecimiento y la transformación digital.",
+      "Optimizamos procesos repetitivos para aumentar productividad y reducir costos.",
   },
+
+  {
+    icon: Database,
+    title: "Sistemas empresariales",
+    description:
+      "Construimos soluciones organizadas para gestionar información, clientes y operaciones.",
+  },
+
+  {
+    icon: Cloud,
+    title: "Infraestructura Cloud",
+    description:
+      "Implementamos sistemas seguros, escalables y preparados para el crecimiento.",
+  },
+
+  {
+    icon: ShieldCheck,
+    title: "Ciberseguridad",
+    description:
+      "Protegemos tus datos y aplicaciones con estándares modernos de seguridad.",
+  },
+
 ];
 
+
+
+
 export default function Services() {
+
   return (
+
     <section
       id="servicios"
-      className="bg-[#09090B] py-32 text-white"
+      className="
+        relative
+        py-24
+      "
     >
+
       <Container>
+
+
         <Reveal>
+
           <div className="text-center">
-            <span className="text-blue-400 font-semibold uppercase tracking-[0.3em]">
-              Servicios
+
+
+            <span
+              className="
+                uppercase
+                tracking-[0.35em]
+                text-cyan-400
+                font-semibold
+              "
+            >
+              Nuestros servicios
             </span>
 
-            <h2 className="mt-4 text-5xl font-bold">
-              Soluciones tecnológicas para empresas
+
+
+            <h2
+              className="
+                mt-6
+                text-4xl
+                font-black
+                text-white
+                sm:text-5xl
+              "
+            >
+              Soluciones digitales que hacen crecer tu negocio
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
-              Ayudamos a empresas a crecer mediante software,
-              inteligencia artificial y automatización.
+
+
+
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-lg
+                leading-8
+                text-gray-400
+              "
+            >
+              Creamos tecnología enfocada en productividad,
+              automatización e inteligencia artificial para empresas modernas.
             </p>
+
+
           </div>
+
+
         </Reveal>
 
-        <div className="mt-20 grid gap-8 md:grid-cols-3">
-          {services.map((service) => (
-            <Reveal key={service.title}>
-              <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:bg-white/10">
-                <div className="mb-6 inline-flex rounded-2xl bg-blue-600/10 p-4 text-blue-400 transition-all group-hover:bg-blue-600 group-hover:text-white">
-                  {service.icon}
+
+
+
+
+        <div
+          className="
+            mt-16
+            grid
+            gap-8
+            md:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
+
+
+          {services.map((service) => {
+
+            const Icon = service.icon;
+
+
+            return (
+
+              <Reveal
+                key={service.title}
+              >
+
+                <div
+                  className="
+                    group
+                    rounded-3xl
+                    border
+                    border-white/10
+                    bg-white/5
+                    p-8
+                    backdrop-blur-xl
+                    transition-all
+                    duration-500
+                    hover:-translate-y-2
+                    hover:border-cyan-400/40
+                    hover:bg-white/10
+                    hover:shadow-[0_0_50px_rgba(34,211,238,.15)]
+                  "
+                >
+
+
+                  <div
+                    className="
+                      mb-6
+                      flex
+                      h-16
+                      w-16
+                      items-center
+                      justify-center
+                      rounded-2xl
+                      bg-cyan-500/10
+                      text-cyan-400
+                      transition
+                      duration-300
+                      group-hover:scale-110
+                    "
+                  >
+
+                    <Icon size={30}/>
+
+                  </div>
+
+
+
+
+
+                  <h3
+                    className="
+                      text-2xl
+                      font-bold
+                      text-white
+                    "
+                  >
+                    {service.title}
+                  </h3>
+
+
+
+
+
+                  <p
+                    className="
+                      mt-4
+                      leading-8
+                      text-gray-400
+                    "
+                  >
+                    {service.description}
+                  </p>
+
+
+
                 </div>
 
-                <h3 className="text-2xl font-bold">
-                  {service.title}
-                </h3>
 
-                <p className="mt-5 leading-8 text-gray-400">
-                  {service.description}
-                </p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+
+            );
+
+          })}
+
+
         </div>
+
+
       </Container>
+
+
     </section>
+
   );
+
 }

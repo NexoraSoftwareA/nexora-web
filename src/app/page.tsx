@@ -9,29 +9,47 @@ import Projects from "@/components/sections/Projects";
 import Stats from "@/components/sections/Stats";
 import Process from "@/components/sections/Process";
 import CTA from "@/components/sections/CTA";
+import Contact from "@/components/sections/Contact";
+
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
+
 
 export default function Home() {
+
   return (
     <>
+
       <Navbar />
 
-      <Hero />
+      <main>
 
-      <Services />
+        <Hero />
 
-      <TechStack />
+        <Stats />
 
-      <WhyUs />
+        <Services />
 
-      <Projects />
+        <WhyUs />
 
-      <Stats />
+        <Projects />
 
-      <Process />
+        <TechStack />
 
-      <CTA />
+        <Process />
+
+        <CTA />
+
+        <Contact />
+
+      </main>
+
 
       <Footer />
+
+      <WhatsAppButton />
+
+
     </>
   );
+
 }

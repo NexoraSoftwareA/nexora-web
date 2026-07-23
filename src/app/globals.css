@@ -3,10 +3,7 @@
 :root {
   --background: #050505;
   --foreground: #ffffff;
-}
 
-/* Theme variables (moved into :root to avoid unknown at-rule) */
-:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -14,76 +11,146 @@
   --font-mono: var(--font-geist-mono);
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-  scroll-behavior:smooth;
+
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  background:var(--background);
-  color:var(--foreground);
-  font-family:var(--font-geist-sans),sans-serif;
-  overflow-x:hidden;
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
 }
 
-/* Selección */
 
-::selection{
-  background:#2563eb;
-  color:white;
+::selection {
+  background: #2563eb;
+  color: white;
 }
 
-/* Scroll */
 
-::-webkit-scrollbar{
-  width:10px;
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-::-webkit-scrollbar-track{
-  background:#050505;
+
+::-webkit-scrollbar-track {
+  background: #050505;
 }
 
-::-webkit-scrollbar-thumb{
-  background:#1e40af;
-  border-radius:999px;
+
+::-webkit-scrollbar-thumb {
+  background: #1e40af;
+  border-radius: 999px;
 }
 
-::-webkit-scrollbar-thumb:hover{
-  background:#2563eb;
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
 }
 
-/* Glow */
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-1;
+/* Fondo ambiental Nexora */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
 
   background:
-  radial-gradient(circle at 15% 20%, rgba(37,99,235,.15), transparent 25%),
-  radial-gradient(circle at 80% 10%, rgba(6,182,212,.10), transparent 25%),
-  radial-gradient(circle at 50% 90%, rgba(37,99,235,.12), transparent 30%);
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(37,99,235,.15),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(6,182,212,.10),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(37,99,235,.12),
+      transparent 30%
+    );
 }
 
-/* Grid */
 
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-2;
+/* Animaciones */
 
-  background-image:
-  linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+@keyframes fadeIn {
 
-  background-size:60px 60px;
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes gridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 60px 60px;
+  }
+
+}
+
+
+@keyframes floatGlow {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes shine {
+
+  from {
+    transform: translateX(-250px);
+  }
+
+  to {
+    transform: translateX(900px);
+  }
+
 }

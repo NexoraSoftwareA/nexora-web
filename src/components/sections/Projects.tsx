@@ -2,136 +2,342 @@ import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
+
 const projects = [
+
   {
-    title: "Sistema ERP",
-    subtitle: "Administración Empresarial",
+    title: "NEXORA ERP",
+    category: "Software Empresarial",
     description:
-      "Gestión de clientes, ventas, inventario y reportes en tiempo real.",
-    color: "from-blue-600 to-cyan-500",
+      "Sistema integral para gestionar ventas, inventario, compras, facturación y reportes empresariales en tiempo real.",
+    image:
+      "linear-gradient(135deg,#2563eb,#06b6d4)",
+    tech: ["Next.js", "React", "PostgreSQL"],
   },
+
+
   {
-    title: "NEXORA CRM",
-    subtitle: "Relación con Clientes",
+    title: "CRM Inteligente",
+    category: "Automatización con IA",
     description:
-      "Seguimiento comercial, automatización de ventas y métricas.",
-    color: "from-violet-600 to-blue-500",
+      "Plataforma comercial con inteligencia artificial para gestionar clientes, ventas y automatizar procesos.",
+    image:
+      "linear-gradient(135deg,#7c3aed,#2563eb)",
+    tech: ["AI", "Node.js", "OpenAI"],
   },
+
+
   {
-    title: "IA Automation",
-    subtitle: "Inteligencia Artificial",
+    title: "Dashboard Analytics",
+    category: "Business Intelligence",
     description:
-      "Automatización de procesos mediante IA y asistentes inteligentes.",
-    color: "from-cyan-500 to-blue-700",
+      "Panel ejecutivo con indicadores en tiempo real para analizar datos y mejorar decisiones empresariales.",
+    image:
+      "linear-gradient(135deg,#0891b2,#1d4ed8)",
+    tech: ["Power BI", "React", "API"],
   },
+
 ];
 
+
+
+
 export default function Projects() {
+
   return (
+
     <section
       id="proyectos"
-      className="bg-[#050505] py-32 text-white"
+      className="
+        relative
+        py-24
+      "
     >
+
+
       <Container>
 
-        <Reveal>
-          <div className="text-center">
 
-            <span className="uppercase tracking-[0.35em] text-blue-400 font-semibold">
-              Portafolio
+
+        <Reveal>
+
+          <div
+            className="
+              text-center
+            "
+          >
+
+
+            <span
+              className="
+                uppercase
+                tracking-[0.35em]
+                text-cyan-400
+                font-semibold
+              "
+            >
+              Proyectos
             </span>
 
-            <h2 className="mt-5 text-5xl font-black">
-              Proyectos destacados
+
+
+
+            <h2
+              className="
+                mt-6
+                text-4xl
+                font-black
+                text-white
+                sm:text-5xl
+              "
+            >
+              Casos destacados
             </h2>
 
-            <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-400">
-              Soluciones diseñadas para empresas modernas.
+
+
+
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-lg
+                leading-8
+                text-gray-400
+              "
+            >
+              Soluciones tecnológicas creadas para impulsar empresas mediante
+              software, inteligencia artificial y automatización.
             </p>
 
+
           </div>
+
+
         </Reveal>
 
-        <div className="mt-20 grid gap-10 lg:grid-cols-3">
+
+
+
+
+        <div
+          className="
+            mt-20
+            grid
+            gap-8
+            lg:grid-cols-3
+          "
+        >
+
+
 
           {projects.map((project) => (
 
-            <Reveal key={project.title}>
 
-              <div className="group overflow-hidden rounded-[30px] border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-blue-500">
+            <Reveal
+              key={project.title}
+            >
 
-                {/* Mockup */}
 
-                <div className={`h-56 bg-gradient-to-br ${project.color} p-6`}>
+              <article
+                className="
+                  group
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-white/10
+                  bg-white/5
+                  backdrop-blur-xl
+                  transition-all
+                  duration-500
+                  hover:-translate-y-3
+                  hover:border-cyan-400/40
+                  hover:shadow-[0_0_60px_rgba(34,211,238,.18)]
+                "
+              >
 
-                  <div className="h-full rounded-2xl bg-[#070707]/80 p-5">
 
-                    <div className="flex gap-2">
 
-                      <div className="h-3 w-3 rounded-full bg-red-400" />
+                {/* Imagen */}
 
-                      <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                <div
+                  className="
+                    relative
+                    h-60
+                    overflow-hidden
+                  "
+                  style={{
+                    background: project.image,
+                  }}
+                >
 
-                      <div className="h-3 w-3 rounded-full bg-green-400" />
 
-                    </div>
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      bg-black/20
+                      transition
+                      duration-500
+                      group-hover:bg-black/5
+                    "
+                  />
 
-                    <div className="mt-6 space-y-4">
 
-                      <div className="h-4 w-32 rounded bg-blue-500/60" />
 
-                      <div className="h-3 w-full rounded bg-white/10" />
+                  <div
+                    className="
+                      absolute
+                      bottom-6
+                      left-6
+                      rounded-full
+                      bg-white/10
+                      px-4
+                      py-2
+                      text-sm
+                      backdrop-blur-md
+                      text-white
+                    "
+                  >
 
-                      <div className="h-3 w-4/5 rounded bg-white/10" />
-
-                      <div className="mt-8 grid grid-cols-3 gap-3">
-
-                        <div className="h-16 rounded bg-blue-500/20" />
-
-                        <div className="h-16 rounded bg-white/10" />
-
-                        <div className="h-16 rounded bg-white/10" />
-
-                      </div>
-
-                    </div>
+                    {project.category}
 
                   </div>
 
+
                 </div>
 
-                {/* Información */}
 
-                <div className="p-8">
 
-                  <p className="text-sm uppercase tracking-widest text-blue-400">
-                    {project.subtitle}
-                  </p>
 
-                  <h3 className="mt-3 text-3xl font-bold">
+
+                {/* Contenido */}
+
+                <div
+                  className="
+                    p-8
+                  "
+                >
+
+
+
+                  <h3
+                    className="
+                      text-3xl
+                      font-bold
+                      text-white
+                    "
+                  >
+
                     {project.title}
+
                   </h3>
 
-                  <p className="mt-5 leading-8 text-gray-400">
+
+
+
+
+                  <p
+                    className="
+                      mt-5
+                      leading-8
+                      text-gray-400
+                    "
+                  >
+
                     {project.description}
+
                   </p>
 
-                  <button className="mt-8 flex items-center gap-2 font-semibold text-blue-400 transition group-hover:gap-4">
-                    Ver proyecto
-                    <ArrowUpRight size={18} />
+
+
+
+
+                  <div
+                    className="
+                      mt-8
+                      flex
+                      flex-wrap
+                      gap-3
+                    "
+                  >
+
+
+                    {project.tech.map((tech) => (
+
+                      <span
+                        key={tech}
+                        className="
+                          rounded-full
+                          border
+                          border-cyan-500/20
+                          bg-cyan-500/10
+                          px-3
+                          py-1
+                          text-sm
+                          text-cyan-300
+                        "
+                      >
+
+                        {tech}
+
+                      </span>
+
+                    ))}
+
+
+                  </div>
+
+
+
+
+
+                  <button
+                    aria-label={`Explorar ${project.title}`}
+                    className="
+                      mt-8
+                      flex
+                      items-center
+                      gap-2
+                      font-semibold
+                      text-cyan-400
+                      transition-all
+                      duration-300
+                      group-hover:gap-4
+                    "
+                  >
+
+                    Explorar solución
+
+                    <ArrowUpRight size={18}/>
+
                   </button>
+
+
 
                 </div>
 
-              </div>
+
+
+              </article>
+
 
             </Reveal>
 
+
           ))}
+
+
 
         </div>
 
+
       </Container>
+
+
     </section>
+
   );
+
 }
