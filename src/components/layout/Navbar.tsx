@@ -24,9 +24,7 @@ export default function Navbar() {
 
     window.addEventListener("scroll", onScroll);
 
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -40,129 +38,185 @@ export default function Navbar() {
         duration-500
         ${
           scrolled
-            ? "border-b border-white/10 bg-black/60 backdrop-blur-2xl shadow-lg"
+            ? "border-b border-white/10 bg-black/70 backdrop-blur-3xl shadow-2xl"
             : "bg-transparent"
         }
       `}
     >
       <Container>
-        <div className="flex h-24 items-center justify-between">
-
+        <div
+          className="
+            flex
+            h-24
+            items-center
+            justify-between
+          "
+        >
           {/* Logo */}
-          <a href="#inicio" className="group flex items-center gap-3">
-
+          <a
+            href="#inicio"
+            className="
+              group
+              flex
+              items-center
+              gap-4
+            "
+          >
             <div
               className="
                 flex
-                h-11
-                w-11
+                h-14
+                w-14
                 items-center
                 justify-center
-                rounded-xl
+                rounded-2xl
                 bg-gradient-to-br
                 from-blue-600
                 to-cyan-400
-                text-lg
+                text-xl
                 font-black
                 text-white
+                shadow-lg
+                transition-transform
+                duration-300
+                group-hover:scale-110
               "
             >
               N
             </div>
 
             <div>
-              <h1 className="text-xl font-black tracking-widest text-white">
+              <h1
+                className="
+                  text-2xl
+                  font-black
+                  tracking-[0.22em]
+                  text-white
+                "
+              >
                 NEXORA
               </h1>
 
-              <p className="text-xs text-gray-400">
-                Software • IA • Automatización
+              <p
+                className="
+                  mt-1
+                  text-xs
+                  tracking-[0.22em]
+                  text-gray-400
+                "
+              >
+                SOFTWARE • IA • AUTOMATIZACIÓN
               </p>
             </div>
-
           </a>
 
-
-          {/* Navegación desktop */}
-          <nav className="hidden items-center gap-8 md:flex">
-
+          {/* Navegación */}
+          <nav
+            className="
+              hidden
+              items-center
+              gap-12
+              lg:flex
+            "
+          >
             {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 className="
-                  text-sm
+                  relative
+                  text-[15px]
                   font-medium
+                  tracking-wide
                   text-gray-300
-                  transition
+                  transition-colors
+                  duration-300
                   hover:text-white
+                  after:absolute
+                  after:left-0
+                  after:-bottom-2
+                  after:h-[2px]
+                  after:w-0
+                  after:bg-cyan-400
+                  after:transition-all
+                  after:duration-300
+                  hover:after:w-full
                 "
               >
                 {link.name}
               </a>
             ))}
-
           </nav>
 
-
           {/* Botón */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button href="#contacto">
               Solicitar cotización
             </Button>
           </div>
 
-
           {/* Menú móvil */}
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Abrir menú"
             className="
               rounded-xl
               border
               border-white/10
               bg-white/5
-              p-2
-              md:hidden
+              p-3
+              transition
+              hover:bg-white/10
+              lg:hidden
             "
-            aria-label="Abrir menú"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-
         </div>
       </Container>
 
-
       {isOpen && (
-        <div className="border-t border-white/10 bg-black/90 md:hidden">
-
+        <div
+          className="
+            border-t
+            border-white/10
+            bg-black/95
+            backdrop-blur-3xl
+            lg:hidden
+          "
+        >
           <Container>
-
-            <nav className="flex flex-col gap-6 py-8">
-
+            <nav
+              className="
+                flex
+                flex-col
+                gap-8
+                py-8
+              "
+            >
               {links.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg text-gray-300 hover:text-blue-400"
+                  className="
+                    text-lg
+                    text-gray-300
+                    transition
+                    hover:text-cyan-400
+                  "
                 >
                   {link.name}
                 </a>
               ))}
 
-
               <Button href="#contacto">
                 Solicitar cotización
               </Button>
-
             </nav>
-
           </Container>
-
         </div>
       )}
-
     </header>
   );
 }

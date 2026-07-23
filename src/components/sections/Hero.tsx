@@ -8,15 +8,16 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden"
+      className="
+        relative
+        overflow-hidden
+      "
     >
-
       {/* Glow de fondo */}
       <BackgroundGlow />
 
       {/* Grid animado */}
       <AnimatedGrid />
-
 
       <Container
         className="
@@ -25,112 +26,109 @@ export default function Hero() {
           flex
           min-h-screen
           items-center
-          pt-28
-          pb-16
+          py-32
+          lg:py-40
+          px-6
+          xl:px-10
         "
       >
-
         <div
           className="
             grid
             w-full
             items-center
-            gap-16
-            lg:grid-cols-2
+            gap-20
+            xl:gap-24
+            lg:grid-cols-[1.05fr_.95fr]
           "
         >
-
-
           {/* Texto */}
 
           <div
             className="
-              max-w-2xl
+              mx-auto
+              w-full
+              max-w-[620px]
+              pl-2
+              sm:pl-6
+              lg:pl-10
+              xl:pl-14
               animate-[fadeIn_1s_ease]
             "
           >
-
             <span
               className="
                 inline-flex
                 items-center
                 rounded-full
                 border
-                border-blue-500/30
-                bg-blue-500/10
-                px-5
-                py-2
+                border-cyan-400/20
+                bg-cyan-400/10
+                px-6
+                py-3
                 text-sm
-                font-medium
-                text-blue-400
+                font-semibold
+                uppercase
+                tracking-[0.18em]
+                text-cyan-300
               "
             >
               Desarrollo • IA • Automatización
             </span>
-
 
             <h1
               className="
                 mt-8
                 text-5xl
                 font-black
-                leading-[1.05]
-                tracking-tight
-                sm:text-6xl
-                lg:text-7xl
+                leading-[1.08]
+                tracking-[-0.03em]
                 text-white
+                sm:text-6xl
+                xl:text-7xl
               "
             >
               Construimos el software que impulsa empresas.
             </h1>
 
-
             <p
               className="
                 mt-8
-                max-w-xl
-                text-lg
-                leading-8
-                text-gray-400
-                sm:text-xl
-              "
-            >
-              Desarrollamos software, inteligencia artificial y automatización
-              para empresas que buscan crecer más rápido.
-            </p>
-
-
-            <div
-              className="
-                mt-10
-                space-y-4
+                max-w-[560px]
+                text-xl
+                leading-10
                 text-gray-300
               "
             >
+              Desarrollamos software, inteligencia artificial y automatización
+              para empresas que buscan crecer más rápido, optimizando procesos y
+              acelerando su crecimiento mediante tecnología de última generación.
+            </p>
 
+            <div
+              className="
+                mt-14
+                space-y-7
+              "
+            >
               <Feature text="Software desarrollado a medida" />
 
               <Feature text="Automatización inteligente de procesos" />
 
               <Feature text="Implementación de Inteligencia Artificial" />
-
             </div>
-
-
 
             <div
               className="
-                mt-12
+                mt-16
                 flex
                 flex-wrap
                 gap-5
               "
             >
-
               <Button href="#contacto">
                 Solicitar cotización
               </Button>
-
 
               <Button
                 href="#proyectos"
@@ -138,13 +136,8 @@ export default function Hero() {
               >
                 Ver proyectos
               </Button>
-
             </div>
-
-
           </div>
-
-
 
           {/* Dashboard */}
 
@@ -154,69 +147,89 @@ export default function Hero() {
               flex
               justify-center
               lg:justify-end
+              lg:pl-8
             "
           >
+            <div
+              className="
+                absolute
+                h-[620px]
+                w-[620px]
+                rounded-full
+                bg-cyan-500/20
+                blur-[220px]
+              "
+            />
 
             <div
               className="
                 absolute
-                h-[450px]
-                w-[450px]
+                -top-8
+                -right-6
+                h-40
+                w-40
                 rounded-full
-                bg-blue-600/20
-                blur-[160px]
-                sm:h-[550px]
-                sm:w-[550px]
+                border
+                border-cyan-400/10
+                bg-cyan-400/5
+                blur-3xl
               "
             />
-
 
             <div
               className="
                 relative
                 w-full
-                max-w-[560px]
+                max-w-[620px]
               "
             >
-
               <Dashboard />
-
             </div>
-
-
           </div>
-
-
         </div>
-
-
       </Container>
-
-
     </section>
   );
 }
-
-
 
 function Feature({
   text,
 }: {
   text: string;
 }) {
-
   return (
-    <div className="flex items-center gap-3">
-
-      <span className="text-xl text-blue-400">
+    <div
+      className="
+        flex
+        items-center
+        gap-4
+      "
+    >
+      <span
+        className="
+          flex
+          h-8
+          w-8
+          items-center
+          justify-center
+          rounded-full
+          bg-cyan-500/10
+          text-cyan-400
+          font-bold
+        "
+      >
         ✓
       </span>
 
-
-      <span>
+      <span
+        className="
+          text-[18px]
+          leading-8
+          text-gray-200
+        "
+      >
         {text}
       </span>
-
     </div>
   );
 }

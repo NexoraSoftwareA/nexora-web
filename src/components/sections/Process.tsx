@@ -1,64 +1,58 @@
-import { Search, PenTool, Code2, Rocket } from "lucide-react";
+import {
+  Search,
+  PenTool,
+  Code2,
+  Rocket,
+} from "lucide-react";
 
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 
-
 const steps = [
   {
-    icon: <Search size={32} />,
+    icon: <Search size={30} />,
     title: "Descubrimiento",
     description:
       "Analizamos tu empresa, entendemos tus objetivos y detectamos oportunidades de mejora.",
   },
 
   {
-    icon: <PenTool size={32} />,
+    icon: <PenTool size={30} />,
     title: "Diseño",
     description:
       "Diseñamos la arquitectura y la experiencia del sistema antes de escribir una sola línea de código.",
   },
 
   {
-    icon: <Code2 size={32} />,
+    icon: <Code2 size={30} />,
     title: "Desarrollo",
     description:
       "Construimos una solución moderna, rápida y escalable utilizando tecnologías de última generación.",
   },
 
   {
-    icon: <Rocket size={32} />,
+    icon: <Rocket size={30} />,
     title: "Implementación",
     description:
       "Ponemos el proyecto en producción y acompañamos a tu empresa durante el crecimiento.",
   },
 ];
 
-
 export default function Process() {
-
   return (
-
     <section
       id="proceso"
-      className="
-        relative
-        py-24
-      "
+      className="relative py-40"
     >
-
       <Container>
 
-
         <Reveal>
-
           <div className="text-center">
-
 
             <span
               className="
                 uppercase
-                tracking-[0.3em]
+                tracking-[0.35em]
                 font-semibold
                 text-blue-400
               "
@@ -66,11 +60,9 @@ export default function Process() {
               Nuestro proceso
             </span>
 
-
-
             <h2
               className="
-                mt-4
+                mt-8
                 text-4xl
                 font-black
                 text-white
@@ -80,112 +72,93 @@ export default function Process() {
               Así desarrollamos cada proyecto
             </h2>
 
-
-
             <p
               className="
                 mx-auto
-                mt-6
-                max-w-2xl
+                mt-8
+                max-w-3xl
                 text-lg
+                leading-9
                 text-gray-400
-                leading-8
               "
             >
               Seguimos una metodología clara para entregar soluciones
-              tecnológicas de alta calidad.
+              tecnológicas de alta calidad, garantizando eficiencia,
+              escalabilidad y resultados medibles.
             </p>
 
-
           </div>
-
-
         </Reveal>
 
-
-
-
-
-        <div className="relative mt-24">
-
+        <div className="relative mt-32">
 
           <div
             className="
               absolute
               left-1/2
-              top-0
+              top-8
               hidden
-              h-full
+              h-[75%]
               w-px
               -translate-x-1/2
               bg-gradient-to-b
-              from-blue-500/60
+              from-blue-500/50
+              via-cyan-400/30
               to-transparent
               lg:block
             "
           />
 
-
-
-
           <div
             className="
               grid
-              gap-10
+              gap-12
               lg:grid-cols-4
             "
           >
-
-
             {steps.map((step) => (
-
-              <Reveal
-                key={step.title}
-              >
-
-
+              <Reveal key={step.title}>
                 <div
                   className="
-                    relative
+                    group
+                    flex
+                    h-full
+                    flex-col
                     rounded-3xl
                     border
                     border-white/10
                     bg-white/5
-                    p-8
+                    p-10
                     backdrop-blur-xl
                     transition-all
-                    duration-300
-                    hover:-translate-y-2
-                    hover:border-blue-500
+                    duration-500
+                    hover:-translate-y-3
+                    hover:border-blue-500/50
+                    hover:bg-white/10
+                    hover:shadow-[0_0_50px_rgba(37,99,235,.18)]
                   "
                 >
-
-
 
                   <div
                     className="
                       mx-auto
-                      mb-6
+                      mb-8
                       flex
-                      h-16
-                      w-16
+                      h-20
+                      w-20
                       items-center
                       justify-center
-                      rounded-2xl
-                      bg-blue-600
-                      text-white
-                      shadow-lg
-                      shadow-blue-500/30
+                      rounded-3xl
+                      bg-blue-600/15
+                      text-blue-400
+                      transition-all
+                      duration-300
+                      group-hover:scale-110
+                      group-hover:bg-blue-600/25
                     "
                   >
-
                     {step.icon}
-
                   </div>
-
-
-
-
 
                   <h3
                     className="
@@ -198,42 +171,26 @@ export default function Process() {
                     {step.title}
                   </h3>
 
-
-
-
-
                   <p
                     className="
-                      mt-5
+                      mt-6
+                      flex-1
                       text-center
-                      leading-8
+                      leading-9
                       text-gray-400
                     "
                   >
                     {step.description}
                   </p>
 
-
-
                 </div>
-
-
               </Reveal>
-
             ))}
-
-
           </div>
-
 
         </div>
 
-
       </Container>
-
-
     </section>
-
   );
-
 }

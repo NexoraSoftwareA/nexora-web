@@ -11,7 +11,6 @@ import {
   Activity,
 } from "lucide-react";
 
-
 export default function Dashboard() {
   return (
     <motion.div
@@ -32,122 +31,127 @@ export default function Dashboard() {
         relative
         mx-auto
         w-full
-        max-w-[560px]
+        max-w-[640px]
         overflow-hidden
-        rounded-[32px]
+        rounded-[38px]
         border
         border-white/10
         bg-gradient-to-br
         from-white/10
         to-white/5
-        p-6
-        sm:p-8
+        p-12
         backdrop-blur-2xl
         shadow-2xl
       "
     >
-
+      {/* Glow */}
       <div
         className="
           pointer-events-none
           absolute
-          -right-20
-          -top-20
-          h-60
-          w-60
+          -right-24
+          -top-24
+          h-72
+          w-72
           rounded-full
           bg-blue-500/20
-          blur-3xl
+          blur-[130px]
         "
       />
 
-
-      <div className="relative flex items-center justify-between gap-4">
-
+      {/* Header */}
+      <div className="relative flex items-center justify-between gap-8">
         <div>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm tracking-[0.15em] uppercase text-gray-400">
             Dashboard empresarial
           </p>
 
-          <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">
+          <h2 className="mt-4 text-3xl font-black text-white">
             NEXORA Analytics
           </h2>
         </div>
 
-
-        <div className="
-          flex
-          items-center
-          gap-2
-          rounded-full
-          border
-          border-green-500/20
-          bg-green-500/10
-          px-3
-          py-2
-          text-sm
-          font-semibold
-          text-green-400
-        ">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+        <div
+          className="
+            flex
+            items-center
+            gap-3
+            rounded-full
+            border
+            border-green-500/20
+            bg-green-500/10
+            px-5
+            py-2.5
+            text-sm
+            font-semibold
+            text-green-400
+          "
+        >
+          <span className="h-2.5 w-2.5 rounded-full bg-green-400 animate-pulse" />
           Online
         </div>
-
       </div>
 
+      {/* Cards */}
+      <div className="relative mt-12 grid grid-cols-2 gap-6">
+        <Card
+          icon={<Bot size={26} />}
+          title="IA Activas"
+          value="32"
+        />
 
+        <Card
+          icon={<Cpu size={26} />}
+          title="Procesos"
+          value="120+"
+        />
 
-      <div className="relative mt-8 grid grid-cols-2 gap-4">
+        <Card
+          icon={<ShieldCheck size={26} />}
+          title="Seguridad"
+          value="99.9%"
+        />
 
-        <Card icon={<Bot size={22}/>} title="IA Activas" value="32" />
-
-        <Card icon={<Cpu size={22}/>} title="Procesos" value="120+" />
-
-        <Card icon={<ShieldCheck size={22}/>} title="Seguridad" value="99.9%" />
-
-        <Card icon={<Activity size={22}/>} title="Clientes" value="50+" />
-
+        <Card
+          icon={<Activity size={26} />}
+          title="Clientes"
+          value="50+"
+        />
       </div>
 
-
-
-
-      <div className="
-        mt-10
-        rounded-3xl
-        border
-        border-white/10
-        bg-black/20
-        p-6
-      ">
-
-        <div className="mb-6 flex items-center justify-between">
-
+      {/* Chart */}
+      <div
+        className="
+          mt-12
+          rounded-3xl
+          border
+          border-white/10
+          bg-black/20
+          p-8
+        "
+      >
+        <div className="mb-8 flex items-center justify-between">
           <div>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm tracking-wide text-gray-400">
               Rendimiento IA
             </p>
 
-            <h3 className="mt-1 text-3xl font-black text-white">
+            <h3 className="mt-2 text-4xl font-black text-white">
               +28%
             </h3>
           </div>
 
-
           <TrendingUp
             className="text-green-400"
-            size={34}
+            size={38}
           />
-
         </div>
-
 
         <svg
           viewBox="0 0 320 120"
-          className="h-36 w-full"
+          className="h-40 w-full"
           fill="none"
         >
-
           <path
             d="M0 95 C40 82 70 70 100 75 S170 35 220 42 S280 20 320 18"
             stroke="#22D3EE"
@@ -161,59 +165,50 @@ export default function Dashboard() {
             r="5"
             fill="#22D3EE"
           />
-
         </svg>
-
       </div>
 
-
-
-      <div className="
-        mt-8
-        rounded-3xl
-        border
-        border-white/10
-        bg-black/20
-        p-6
-      ">
-
-        <div className="flex items-center justify-between gap-4">
-
+      {/* Activity */}
+      <div
+        className="
+          mt-10
+          rounded-3xl
+          border
+          border-white/10
+          bg-black/20
+          p-8
+        "
+      >
+        <div className="flex items-center justify-between gap-8">
           <div>
-
-            <p className="text-sm text-gray-400">
+            <p className="text-sm tracking-wide text-gray-400">
               Última actividad
             </p>
 
-            <h3 className="mt-2 font-semibold text-white">
+            <h3 className="mt-3 text-lg font-semibold text-white">
               IA procesando solicitudes empresariales
             </h3>
-
           </div>
 
-
-          <span className="
-            rounded-full
-            bg-green-500/20
-            px-4
-            py-2
-            text-sm
-            font-semibold
-            text-green-400
-          ">
+          <span
+            className="
+              whitespace-nowrap
+              rounded-full
+              bg-green-500/20
+              px-5
+              py-2.5
+              text-sm
+              font-semibold
+              text-green-400
+            "
+          >
             Activo
           </span>
-
         </div>
-
       </div>
-
-
     </motion.div>
   );
 }
-
-
 
 type CardProps = {
   icon: ReactNode;
@@ -221,49 +216,47 @@ type CardProps = {
   value: string;
 };
 
-
-
 function Card({
   icon,
   title,
   value,
 }: CardProps) {
-
   return (
-    <div className="
-      rounded-2xl
-      border
-      border-white/10
-      bg-white/5
-      p-5
-      transition
-      hover:bg-white/10
-    ">
-
-      <div className="
-        mb-4
-        flex
-        h-10
-        w-10
-        items-center
-        justify-center
-        rounded-xl
-        bg-blue-500/10
-        text-blue-400
-      ">
+    <div
+      className="
+        rounded-3xl
+        border
+        border-white/10
+        bg-white/5
+        p-7
+        transition-all
+        duration-300
+        hover:border-cyan-400/40
+        hover:bg-white/10
+      "
+    >
+      <div
+        className="
+          flex
+          h-14
+          w-14
+          items-center
+          justify-center
+          rounded-2xl
+          bg-cyan-500/10
+          text-cyan-400
+        "
+      >
         {icon}
       </div>
 
-
-      <p className="text-sm text-gray-400">
+      <p className="mt-6 text-sm tracking-wide text-gray-400">
         {title}
       </p>
 
-
-      <h3 className="mt-2 text-3xl font-black text-white">
+      <h3 className="mt-3 text-3xl font-black text-white">
         {value}
       </h3>
-
     </div>
   );
 }

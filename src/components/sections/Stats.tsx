@@ -5,12 +5,7 @@ import CountUp from "react-countup";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 
-
-const stats: {
-  value: number;
-  suffix: string;
-  label: string;
-}[] = [
+const stats = [
   {
     value: 50,
     suffix: "+",
@@ -33,31 +28,18 @@ const stats: {
   },
 ];
 
-
-
 export default function Stats() {
-
   return (
-
     <section
       id="resultados"
       className="
         relative
-        py-24
+        py-40
       "
     >
-
       <Container>
-
-
         <Reveal>
-
-          <div
-            className="
-              text-center
-            "
-          >
-
+          <div className="text-center">
             <span
               className="
                 uppercase
@@ -69,11 +51,9 @@ export default function Stats() {
               Resultados
             </span>
 
-
-
             <h2
               className="
-                mt-6
+                mt-8
                 text-4xl
                 font-black
                 text-white
@@ -83,54 +63,38 @@ export default function Stats() {
               Tecnología que genera impacto
             </h2>
 
-
-
-
             <p
               className="
                 mx-auto
-                mt-6
+                mt-8
                 max-w-2xl
                 text-lg
-                leading-8
+                leading-9
                 text-gray-400
               "
             >
               Cada proyecto está enfocado en aumentar la productividad,
               optimizar procesos y generar crecimiento para nuestros clientes.
             </p>
-
-
           </div>
-
-
         </Reveal>
-
-
-
-
 
         <div
           className="
-            mt-20
+            mt-28
             grid
-            gap-8
+            gap-10
             md:grid-cols-2
             lg:grid-cols-4
           "
         >
-
-
-
           {stats.map((stat) => (
-
-            <Reveal
-              key={stat.label}
-            >
-
-
+            <Reveal key={stat.label}>
               <div
                 className="
+                  flex
+                  h-full
+                  flex-col
                   rounded-3xl
                   border
                   border-white/10
@@ -145,9 +109,6 @@ export default function Stats() {
                   hover:shadow-[0_0_50px_rgba(34,211,238,.15)]
                 "
               >
-
-
-
                 <h3
                   className="
                     text-5xl
@@ -155,48 +116,33 @@ export default function Stats() {
                     text-cyan-400
                   "
                 >
-
                   <CountUp
                     end={stat.value}
                     duration={2.5}
-                    decimals={
-                      stat.value % 1 !== 0
-                        ? 1
-                        : 0
-                    }
+                    decimals={stat.value % 1 !== 0 ? 1 : 0}
                   />
-
                   {stat.suffix}
-
-
                 </h3>
-
-
-
 
                 <p
                   className="
-                    mt-5
+                    mt-6
+                    text-lg
                     text-gray-300
                   "
                 >
                   {stat.label}
                 </p>
 
-
-
-
-
                 <div
                   className="
-                    mt-8
+                    mt-10
                     h-2
                     overflow-hidden
                     rounded-full
                     bg-white/10
                   "
                 >
-
                   <div
                     className="
                       h-full
@@ -204,35 +150,15 @@ export default function Stats() {
                       bg-cyan-400
                     "
                     style={{
-                      width:
-                        stat.value === 99.9
-                          ? "99%"
-                          : "92%",
+                      width: stat.value === 99.9 ? "99%" : "92%",
                     }}
                   />
-
                 </div>
-
-
-
               </div>
-
-
             </Reveal>
-
-
           ))}
-
-
         </div>
-
-
-
       </Container>
-
-
     </section>
-
   );
-
 }

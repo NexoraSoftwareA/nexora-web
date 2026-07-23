@@ -13,43 +13,52 @@ import Contact from "@/components/sections/Contact";
 
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
-
 export default function Home() {
-
   return (
     <>
-
       <Navbar />
 
-      <main>
+      <main className="flex flex-col">
 
         <Hero />
 
-        <Stats />
+        <div className="h-24 lg:h-32" />
 
         <Services />
 
+        <div className="h-24 lg:h-32" />
+
+        <Stats />
+
+        <div className="h-24 lg:h-32" />
+
         <WhyUs />
+
+        <div className="h-24 lg:h-32" />
 
         <Projects />
 
+        <div className="h-24 lg:h-32" />
+
         <TechStack />
+
+        <div className="h-24 lg:h-32" />
 
         <Process />
 
+        <div className="h-24 lg:h-32" />
+
         <CTA />
+
+        <div className="h-24 lg:h-32" />
 
         <Contact />
 
       </main>
 
-
       <Footer />
 
       <WhatsAppButton />
-
-
     </>
   );
-
 }
