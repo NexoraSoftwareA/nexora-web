@@ -27,6 +27,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   return (
     <header
       className={`
@@ -86,7 +96,7 @@ export default function Navbar() {
             </div>
 
             <div>
-              <h1
+              <span
                 className="
                   text-2xl
                   font-black
@@ -95,7 +105,7 @@ export default function Navbar() {
                 "
               >
                 NEXORA
-              </h1>
+              </span>
 
               <p
                 className="
@@ -158,7 +168,9 @@ export default function Navbar() {
           {/* Menú móvil */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Abrir menú"
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
             className="
               rounded-xl
               border
@@ -187,6 +199,7 @@ export default function Navbar() {
         >
           <Container>
             <nav
+              id="mobile-navigation"
               className="
                 flex
                 flex-col

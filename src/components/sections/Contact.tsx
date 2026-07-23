@@ -5,6 +5,7 @@ import type { FormEvent } from "react";
 
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import { SITE } from "@/constants/site";
 
 import {
   Mail,
@@ -49,7 +50,7 @@ ${form.message}
 
 
     window.location.href =
-      `mailto:contacto@nexora.com?subject=${subject}&body=${body}`;
+      `mailto:${SITE.email}?subject=${subject}&body=${body}`;
 
   };
 
@@ -147,7 +148,7 @@ ${form.message}
                 <div className="flex items-center gap-4">
                   <Mail className="text-blue-400" />
                   <span>
-                    contacto@nexora.com
+                    {SITE.email}
                   </span>
                 </div>
 
@@ -156,7 +157,7 @@ ${form.message}
                 <div className="flex items-center gap-4">
                   <Phone className="text-blue-400" />
                   <span>
-                    +57 320 941 8700
+                    {SITE.phone}
                   </span>
                 </div>
 
@@ -165,7 +166,7 @@ ${form.message}
                 <div className="flex items-center gap-4">
                   <MapPin className="text-blue-400" />
                   <span>
-                    Colombia
+                    {SITE.location}
                   </span>
                 </div>
 
@@ -215,6 +216,8 @@ ${form.message}
 
                 <input
                   required
+                  aria-label="Nombre"
+                  autoComplete="name"
                   placeholder="Nombre"
                   value={form.name}
                   onChange={(e) =>
@@ -243,6 +246,8 @@ ${form.message}
                 <input
                   required
                   type="email"
+                  aria-label="Correo"
+                  autoComplete="email"
                   placeholder="Correo"
                   value={form.email}
                   onChange={(e) =>
@@ -271,6 +276,8 @@ ${form.message}
 
                 <input
                   placeholder="Empresa"
+                  aria-label="Empresa"
+                  autoComplete="organization"
                   value={form.company}
                   onChange={(e) =>
                     setForm({
@@ -300,6 +307,7 @@ ${form.message}
                   required
                   rows={6}
                   placeholder="Cuéntanos tu proyecto..."
+                  aria-label="Cuéntanos tu proyecto"
                   value={form.message}
                   onChange={(e) =>
                     setForm({

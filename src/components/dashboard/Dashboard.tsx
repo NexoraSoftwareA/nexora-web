@@ -31,15 +31,16 @@ export default function Dashboard() {
         relative
         mx-auto
         w-full
-        max-w-[640px]
+        max-w-[580px]
         overflow-hidden
-        rounded-[38px]
+        rounded-[32px]
         border
         border-white/10
         bg-gradient-to-br
         from-white/10
         to-white/5
-        p-12
+        p-5
+        sm:p-7
         backdrop-blur-2xl
         shadow-2xl
       "
@@ -60,13 +61,13 @@ export default function Dashboard() {
       />
 
       {/* Header */}
-      <div className="relative flex items-center justify-between gap-8">
+      <div className="relative flex items-center justify-between gap-4">
         <div>
-          <p className="text-sm tracking-[0.15em] uppercase text-gray-400">
+          <p className="text-xs tracking-[0.15em] uppercase text-gray-400">
             Dashboard empresarial
           </p>
 
-          <h2 className="mt-4 text-3xl font-black text-white">
+          <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">
             NEXORA Analytics
           </h2>
         </div>
@@ -75,14 +76,14 @@ export default function Dashboard() {
           className="
             flex
             items-center
-            gap-3
+            gap-2
             rounded-full
             border
             border-green-500/20
             bg-green-500/10
-            px-5
-            py-2.5
-            text-sm
+            px-3
+            py-2
+            text-xs
             font-semibold
             text-green-400
           "
@@ -93,7 +94,7 @@ export default function Dashboard() {
       </div>
 
       {/* Cards */}
-      <div className="relative mt-12 grid grid-cols-2 gap-6">
+      <div className="relative mt-6 grid grid-cols-2 gap-3 sm:gap-4">
         <Card
           icon={<Bot size={26} />}
           title="IA Activas"
@@ -122,34 +123,34 @@ export default function Dashboard() {
       {/* Chart */}
       <div
         className="
-          mt-12
-          rounded-3xl
+          mt-6
+          rounded-2xl
           border
           border-white/10
           bg-black/20
-          p-8
+          p-5
         "
       >
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-4 flex items-center justify-between">
           <div>
             <p className="text-sm tracking-wide text-gray-400">
               Rendimiento IA
             </p>
 
-            <h3 className="mt-2 text-4xl font-black text-white">
+            <h3 className="mt-1 text-3xl font-black text-white">
               +28%
             </h3>
           </div>
 
           <TrendingUp
             className="text-green-400"
-            size={38}
+            size={30}
           />
         </div>
 
         <svg
           viewBox="0 0 320 120"
-          className="h-40 w-full"
+          className="h-28 w-full sm:h-32"
           fill="none"
         >
           <path
@@ -171,21 +172,21 @@ export default function Dashboard() {
       {/* Activity */}
       <div
         className="
-          mt-10
-          rounded-3xl
+          mt-5
+          rounded-2xl
           border
           border-white/10
           bg-black/20
-          p-8
+          p-5
         "
       >
-        <div className="flex items-center justify-between gap-8">
+        <div className="flex items-center justify-between gap-4">
           <div>
             <p className="text-sm tracking-wide text-gray-400">
               Última actividad
             </p>
 
-            <h3 className="mt-3 text-lg font-semibold text-white">
+            <h3 className="mt-2 text-sm font-semibold text-white sm:text-base">
               IA procesando solicitudes empresariales
             </h3>
           </div>
@@ -195,9 +196,9 @@ export default function Dashboard() {
               whitespace-nowrap
               rounded-full
               bg-green-500/20
-              px-5
-              py-2.5
-              text-sm
+              px-3
+              py-2
+              text-xs
               font-semibold
               text-green-400
             "
@@ -224,11 +225,12 @@ function Card({
   return (
     <div
       className="
-        rounded-3xl
+        rounded-2xl
         border
         border-white/10
         bg-white/5
-        p-7
+        p-4
+        sm:p-5
         transition-all
         duration-300
         hover:border-cyan-400/40
@@ -238,11 +240,11 @@ function Card({
       <div
         className="
           flex
-          h-14
-          w-14
+          h-10
+          w-10
           items-center
           justify-center
-          rounded-2xl
+          rounded-xl
           bg-cyan-500/10
           text-cyan-400
         "
@@ -250,11 +252,11 @@ function Card({
         {icon}
       </div>
 
-      <p className="mt-6 text-sm tracking-wide text-gray-400">
+      <p className="mt-4 text-xs tracking-wide text-gray-400 sm:text-sm">
         {title}
       </p>
 
-      <h3 className="mt-3 text-3xl font-black text-white">
+      <h3 className="mt-1 text-2xl font-black text-white sm:text-3xl">
         {value}
       </h3>
     </div>

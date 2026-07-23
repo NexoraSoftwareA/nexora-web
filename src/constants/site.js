@@ -6,7 +6,7 @@ export const SITE = {
   description:
     "Desarrollo de software, inteligencia artificial y automatización empresarial.",
 
-  email: "alejandro@nexora.com",
+  email: "contacto@nexora.com",
 
   whatsapp: "+57 3209418700",
 

@@ -24,6 +24,19 @@ export const metadata: Metadata = {
   title: "NEXORA | Tecnología que impulsa tu negocio",
   description:
     "Desarrollo de software, inteligencia artificial y automatización para empresas modernas.",
+  keywords: [
+    "desarrollo de software",
+    "inteligencia artificial",
+    "automatización empresarial",
+    "Nexora",
+  ],
+  openGraph: {
+    title: "NEXORA | Tecnología que impulsa tu negocio",
+    description:
+      "Software, inteligencia artificial y automatización para empresas modernas.",
+    locale: "es_CO",
+    type: "website",
+  },
 };
 
 

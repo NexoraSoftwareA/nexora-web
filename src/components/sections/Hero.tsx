@@ -26,8 +26,8 @@ export default function Hero() {
           flex
           min-h-screen
           items-center
-          py-32
-          lg:py-40
+          py-28
+          lg:py-16
           px-6
           xl:px-10
         "
@@ -37,8 +37,8 @@ export default function Hero() {
             grid
             w-full
             items-center
-            gap-20
-            xl:gap-24
+            gap-14
+            xl:gap-16
             lg:grid-cols-[1.05fr_.95fr]
           "
         >
@@ -49,10 +49,8 @@ export default function Hero() {
               mx-auto
               w-full
               max-w-[620px]
-              pl-2
-              sm:pl-6
-              lg:pl-10
-              xl:pl-14
+              pl-0
+              lg:pl-4
               animate-[fadeIn_1s_ease]
             "
           >
@@ -78,14 +76,14 @@ export default function Hero() {
 
             <h1
               className="
-                mt-8
+                mt-6
                 text-5xl
                 font-black
                 leading-[1.08]
                 tracking-[-0.03em]
                 text-white
                 sm:text-6xl
-                xl:text-7xl
+                xl:text-6xl
               "
             >
               Construimos el software que impulsa empresas.
@@ -93,10 +91,12 @@ export default function Hero() {
 
             <p
               className="
-                mt-8
+                mt-6
                 max-w-[560px]
-                text-xl
-                leading-10
+                text-lg
+                leading-8
+                sm:text-xl
+                sm:leading-9
                 text-gray-300
               "
             >
@@ -107,8 +107,8 @@ export default function Hero() {
 
             <div
               className="
-                mt-14
-                space-y-7
+                mt-10
+                space-y-4
               "
             >
               <Feature text="Software desarrollado a medida" />
@@ -120,7 +120,7 @@ export default function Hero() {
 
             <div
               className="
-                mt-16
+                mt-10
                 flex
                 flex-wrap
                 gap-5
@@ -147,7 +147,7 @@ export default function Hero() {
               flex
               justify-center
               lg:justify-end
-              lg:pl-8
+              lg:pl-4
             "
           >
             <div
@@ -180,7 +180,7 @@ export default function Hero() {
               className="
                 relative
                 w-full
-                max-w-[620px]
+                max-w-[580px]
               "
             >
               <Dashboard />
@@ -208,8 +208,8 @@ function Feature({
       <span
         className="
           flex
-          h-8
-          w-8
+          h-7
+          w-7
           items-center
           justify-center
           rounded-full
@@ -223,8 +223,8 @@ function Feature({
 
       <span
         className="
-          text-[18px]
-          leading-8
+          text-base
+          leading-7
           text-gray-200
         "
       >
