@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
@@ -8,7 +10,7 @@ const projects = [
     category: "Software Empresarial",
     description:
       "Sistema integral para gestionar ventas, inventario, compras, facturación y reportes empresariales en tiempo real.",
-    image: "linear-gradient(135deg,#2563eb,#06b6d4)",
+    image: "/projects/nexora-erp.png",
     tech: ["Next.js", "React", "PostgreSQL"],
   },
   {
@@ -16,7 +18,7 @@ const projects = [
     category: "Automatización con IA",
     description:
       "Plataforma comercial con inteligencia artificial para gestionar clientes, ventas y automatizar procesos.",
-    image: "linear-gradient(135deg,#7c3aed,#2563eb)",
+    image: "/projects/crm-inteligente.png",
     tech: ["AI", "Node.js", "OpenAI"],
   },
   {
@@ -24,7 +26,7 @@ const projects = [
     category: "Business Intelligence",
     description:
       "Panel ejecutivo con indicadores en tiempo real para analizar datos y mejorar decisiones empresariales.",
-    image: "linear-gradient(135deg,#0891b2,#1d4ed8)",
+    image: "/projects/dashboard-analytics.png",
     tech: ["Power BI", "React", "API"],
   },
 ];
@@ -116,18 +118,26 @@ export default function Projects() {
                     h-72
                     overflow-hidden
                   "
-                  style={{
-                    background: project.image,
-                  }}
                 >
+                  <Image
+                    src={project.image}
+                    alt={`Vista previa de ${project.title}`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+
                   <div
                     className="
                       absolute
                       inset-0
-                      bg-black/20
+                      bg-gradient-to-t
+                      from-black/60
+                      via-black/10
+                      to-black/10
                       transition
                       duration-500
-                      group-hover:bg-black/5
+                      group-hover:from-black/35
                     "
                   />
 
