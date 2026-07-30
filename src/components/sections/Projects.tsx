@@ -2,30 +2,36 @@ import Image from "next/image";
 
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Target } from "lucide-react";
 
 const projects = [
   {
     title: "NEXORA ERP",
     category: "Software Empresarial",
-    description:
-      "Sistema integral para gestionar ventas, inventario, compras, facturación y reportes empresariales en tiempo real.",
+    challenge: "Ventas, inventario y facturación repartidos en varias herramientas.",
+    solution:
+      "Una plataforma centralizada para operar, consultar información y tomar decisiones con más claridad.",
+    outcome: "Operación conectada en un solo lugar",
     image: "/projects/nexora-erp.png",
     tech: ["Next.js", "React", "PostgreSQL"],
   },
   {
     title: "CRM Inteligente",
     category: "Automatización con IA",
-    description:
-      "Plataforma comercial con inteligencia artificial para gestionar clientes, ventas y automatizar procesos.",
+    challenge: "Seguimientos comerciales manuales y oportunidades que se pierden en el proceso.",
+    solution:
+      "Un CRM que organiza clientes, automatiza tareas repetitivas y prioriza cada oportunidad.",
+    outcome: "Equipos comerciales más enfocados",
     image: "/projects/crm-inteligente.png",
     tech: ["AI", "Node.js", "OpenAI"],
   },
   {
     title: "Dashboard Analytics",
     category: "Business Intelligence",
-    description:
-      "Panel ejecutivo con indicadores en tiempo real para analizar datos y mejorar decisiones empresariales.",
+    challenge: "Datos relevantes dispersos, difíciles de convertir en decisiones a tiempo.",
+    solution:
+      "Un panel ejecutivo que reúne indicadores clave y hace visible lo que necesita atención.",
+    outcome: "Decisiones respaldadas por datos",
     image: "/projects/dashboard-analytics.png",
     tech: ["Power BI", "React", "API"],
   },
@@ -76,8 +82,8 @@ export default function Projects() {
                 text-gray-400
               "
             >
-              Soluciones tecnológicas creadas para impulsar empresas mediante
-              software, inteligencia artificial y automatización.
+              Ejemplos de cómo convertimos procesos complejos en herramientas
+              claras, útiles y preparadas para crecer.
             </p>
           </div>
         </Reveal>
@@ -177,15 +183,46 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <p
-                    className="
-                      mt-6
-                      leading-9
-                      text-gray-400
-                    "
-                  >
-                    {project.description}
-                  </p>
+                  <div className="mt-6 space-y-5">
+                    <div className="flex gap-3">
+                      <Target
+                        size={18}
+                        className="mt-1 shrink-0 text-cyan-400"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500">
+                          El reto
+                        </p>
+                        <p className="mt-1 leading-7 text-gray-400">
+                          {project.challenge}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-3">
+                      <CheckCircle2
+                        size={18}
+                        className="mt-1 shrink-0 text-cyan-400"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500">
+                          La solución
+                        </p>
+                        <p className="mt-1 leading-7 text-gray-400">
+                          {project.solution}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 rounded-2xl border border-cyan-400/15 bg-cyan-400/5 px-4 py-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cyan-300">
+                      Impacto
+                    </p>
+                    <p className="mt-1 font-medium text-white">{project.outcome}</p>
+                  </div>
 
                   <div
                     className="
@@ -214,8 +251,9 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <button
-                    aria-label={`Explorar ${project.title}`}
+                  <a
+                    href="#contacto"
+                    aria-label={`Solicitar una solución similar a ${project.title}`}
                     className="
                       mt-10
                       flex
@@ -228,9 +266,9 @@ export default function Projects() {
                       group-hover:gap-4
                     "
                   >
-                    Explorar solución
+                    Quiero una solución similar
                     <ArrowUpRight size={18} />
-                  </button>
+                  </a>
                 </div>
               </article>
             </Reveal>
