@@ -145,21 +145,27 @@ ${form.message}
               >
 
 
-                <div className="flex items-center gap-4">
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="flex w-fit items-center gap-4 text-gray-200 transition hover:text-cyan-300"
+                >
                   <Mail className="text-blue-400" />
                   <span>
                     {SITE.email}
                   </span>
-                </div>
+                </a>
 
 
 
-                <div className="flex items-center gap-4">
+                <a
+                  href={`tel:${SITE.whatsapp.replace(/\s/g, "")}`}
+                  className="flex w-fit items-center gap-4 text-gray-200 transition hover:text-cyan-300"
+                >
                   <Phone className="text-blue-400" />
                   <span>
                     {SITE.phone}
                   </span>
-                </div>
+                </a>
 
 
 
@@ -350,6 +356,10 @@ ${form.message}
                 >
                   Enviar solicitud
                 </button>
+
+                <p className="text-center text-sm leading-6 text-gray-500">
+                  Al enviarlo, se abrirá tu aplicación de correo con el mensaje listo.
+                </p>
 
 
 

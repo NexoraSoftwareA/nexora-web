@@ -1,12 +1,13 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
+import { SITE } from "@/constants/site";
 
 
 export default function WhatsAppButton() {
 
 
-  const phone = "573209418700";
+  const phone = SITE.whatsapp.replace(/\D/g, "");
 
 
   const message = encodeURIComponent(
